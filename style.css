@@ -1,0 +1,139 @@
+:root{--green:#dc2626;--dark:#1c1917;--light:#fef2f2;--accent:#facc15;--text:#1f2937;--muted:#6b7280;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);line-height:1.7;background:#fff}
+a{color:var(--green)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:200}
+
+/* ===== Scroll progress bar ===== */
+#progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--accent),#fde68a);z-index:100;transition:width .1s linear}
+
+/* ===== Header ===== */
+header{background:rgba(11,31,30,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;position:sticky;top:0;z-index:50;transition:box-shadow .3s}
+header.scrolled{box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.nav{max-width:1000px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:14px 20px;gap:8px;transition:padding .3s var(--ease)}
+header.scrolled .nav{padding:8px 20px}
+.logo{font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;transition:transform .3s var(--ease);display:inline-block}
+.logo:hover{transform:scale(1.06)}
+.logo span{color:var(--accent)}
+nav a{color:#d1fae5;text-decoration:none;margin-left:18px;font-weight:600;position:relative;padding-bottom:4px;transition:color .25s}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);transition:width .35s var(--ease)}
+nav a:hover,nav a.active{color:var(--accent)}
+nav a:hover::after,nav a.active::after{width:100%}
+
+/* ===== Hero ===== */
+.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--green),var(--dark),var(--green));background-size:300% 300%;animation:gradientShift 14s ease infinite;color:#fff;text-align:center;padding:76px 20px 84px}
+.hero h1,.hero p{position:relative;z-index:1}
+.hero h1{font-size:clamp(1.8rem,5vw,2.8rem);max-width:800px;margin:auto;line-height:1.2}
+.hero h1 .w{display:inline-block;opacity:0;animation:wordUp .7s var(--ease) forwards}
+.hero p{max-width:680px;margin:14px auto 0;color:#ccfbf1;animation:fadeUp .9s .5s var(--ease) both}
+.hero p.rotator{font-size:1.15rem;color:#fff;animation-delay:.75s}
+.rot{display:inline-block;min-width:6.5ch;text-align:left;color:var(--accent);font-weight:800;transition:opacity .35s,transform .35s var(--ease)}
+.rot.out{opacity:0;transform:translateY(10px)}
+.blobs{position:absolute;inset:0;pointer-events:none;transform:translate3d(var(--px,0px),calc(var(--py,0px) + var(--sy,0px)),0);transition:transform .25s ease-out}
+.blob{position:absolute;border-radius:50%;filter:blur(50px);opacity:.35;animation:float 12s ease-in-out infinite}
+.b1{width:260px;height:260px;background:var(--accent);top:-60px;left:8%}
+.b2{width:320px;height:320px;background:#fff;opacity:.18;bottom:-130px;right:6%;animation-duration:16s;animation-delay:-4s}
+.b3{width:180px;height:180px;background:#fff;opacity:.2;top:28%;left:58%;animation-duration:10s;animation-delay:-2s}
+
+/* ===== Marquee ticker ===== */
+.marquee{overflow:hidden;background:var(--dark);color:#d1fae5;padding:14px 0;border-top:1px solid rgba(255,255,255,.08)}
+.marquee-track{display:flex;width:max-content;animation:marquee 40s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-group{display:flex;gap:44px;padding-right:44px;font-weight:600;white-space:nowrap}
+
+/* ===== Layout ===== */
+main{max-width:1000px;margin:auto;padding:32px 20px}
+h2{color:var(--green);margin:32px 0 12px;font-size:1.6rem}
+h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;background:var(--accent);margin-top:6px}
+h3{margin:20px 0 8px}
+p,ul,ol{margin-bottom:14px}
+ul,ol{padding-left:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+
+/* ===== Cards with mouse glow ===== */
+.card{position:relative;overflow:hidden;background:var(--light);border:1px solid #99f6e4;border-radius:14px;padding:22px;margin:18px 0;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),rgba(45,212,191,.25),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,118,110,.2)}
+.card:hover::before{opacity:1}
+.card>*{position:relative;z-index:1}
+
+/* ===== Stats strip ===== */
+.stats-inner{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:28px}
+.sitem{background:#fff;border:1px solid #99f6e4;border-radius:14px;padding:18px;text-align:center;box-shadow:0 6px 18px rgba(15,118,110,.08);transition:transform .3s var(--ease),box-shadow .3s}
+.sitem:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(15,118,110,.18)}
+.sitem strong{display:block;font-size:2.2rem;line-height:1.1;color:var(--green)}
+.sitem span{color:var(--muted);font-size:.9rem}
+
+/* ===== Form ===== */
+form .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+label{display:block;font-weight:600;font-size:.9rem;margin-bottom:4px}
+input,select{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font-size:1rem;transition:border-color .25s,box-shadow .25s}
+input:focus,select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px rgba(15,118,110,.18)}
+
+/* ===== Buttons with shine ===== */
+button,.cta{position:relative;overflow:hidden}
+button{background:var(--green);color:#fff;border:0;padding:12px 26px;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:16px;transition:background .3s,transform .2s var(--ease)}
+button:hover{background:var(--dark);transform:translateY(-2px)}
+button:active{transform:scale(.97)}
+button::after,.cta::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .7s var(--ease)}
+button:hover::after,.cta:hover::after{left:130%}
+.cta{display:inline-block;background:var(--accent);color:#111;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none;margin-top:18px;animation:pulse 2.6s infinite;transition:transform .25s var(--ease)}
+.cta:hover{transform:translateY(-3px)}
+
+/* ===== Results ===== */
+.results{display:none;margin-top:22px}
+.stat{background:#fff;border:1px solid #99f6e4;border-radius:12px;padding:16px;text-align:center}
+.stat strong{display:block;font-size:1.8rem;color:var(--green)}
+.stat small{color:var(--muted)}
+.results.show .stat{animation:pop .6s var(--ease) both}
+
+/* ===== Tables and details ===== */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+th,td{border:1px solid #e5e7eb;padding:10px;text-align:left}
+th{background:var(--green);color:#fff}
+tr:nth-child(even){background:#f9fafb}
+tbody tr{transition:background .2s}
+tbody tr:hover{background:#ccfbf1}
+details{border:1px solid #e5e7eb;border-radius:10px;padding:12px 16px;margin:10px 0;transition:box-shadow .3s,border-color .3s}
+details:hover{border-color:var(--green);box-shadow:0 6px 18px rgba(15,118,110,.12)}
+details[open] p{animation:fadeUp .45s var(--ease)}
+summary{font-weight:700;cursor:pointer}
+.note{font-size:.85rem;color:var(--muted)}
+
+/* ===== Footer ===== */
+footer{background:var(--dark);color:#99f6e4;text-align:center;padding:26px 20px;margin-top:40px;font-size:.9rem}
+footer a{color:var(--accent)}
+
+/* ===== Back to top ===== */
+#top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;margin:0;padding:0;font-size:1.3rem;background:var(--accent);color:#111;box-shadow:0 8px 20px rgba(0,0,0,.3);opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity .3s,transform .3s var(--ease),visibility .3s;z-index:60}
+#top.show{opacity:1;visibility:visible;transform:none}
+#top:hover{background:#fff;transform:translateY(-4px)}
+
+/* ===== Scroll reveal (only active when JS runs) ===== */
+.js .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.from-left{transform:translateX(-34px)}
+.js .reveal.zoom{transform:scale(.92) translateY(20px)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ===== Keyframes ===== */
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.15)}}
+@keyframes wordUp{from{opacity:0;transform:translateY(28px) rotate(2deg)}to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{transform:scale(1.07)}100%{opacity:1;transform:scale(1)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(245,158,11,.55)}70%{box-shadow:0 0 0 16px rgba(245,158,11,0)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}
+
+@media(max-width:600px){nav a{margin:0 10px 0 0}.hero{padding:56px 20px 64px}}
+
+/* ===== Respect users who prefer less motion ===== */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none}
+  .hero h1 .w{opacity:1}
+}
