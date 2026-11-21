@@ -3,127 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Macro &amp; Calorie Calculator for Pakistani Lifters | DesiFit</title>
-<meta name="description" content="Free calorie, protein, carbs and fats calculator. Find your daily macros for fat loss or muscle gain, with desi food tips for Pakistani gym beginners.">
-<link rel="canonical" href="https://Fitplanet.github.io/">
+<title>FitPlanet | Free Macro Calculator & Desi Fitness Guide</title>
+<meta name="description" content="Free macro and calorie calculator, desi meal guide and a 3-day beginner workout chart, made for Pakistani lifters and students.">
+<link rel="canonical" href="https://fitplanet.github.io/">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Macro &amp; Calorie Calculator for Pakistani Lifters | DesiFit">
-<meta property="og:description" content="Calculate your daily calories, protein, carbs and fats in seconds.">
+<meta property="og:title" content="FitPlanet | Free Macro Calculator & Desi Fitness Guide">
+<meta property="og:description" content="Free macro and calorie calculator, desi meal guide and a 3-day beginner workout chart, made for Pakistani lifters and students.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://Fitplanet.github.io/">
-<meta name="theme-color" content="#0f766e">
+<meta property="og:url" content="https://fitplanet.github.io/">
+<meta name="theme-color" content="#080c17">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"DesiFit Macro Calculator","url":"https://Fitplanet.github.io/","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "FitPlanet Macro Calculator", "url": "https://fitplanet.github.io/", "applicationCategory": "HealthApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How many calories should I eat per day?","acceptedAnswer":{"@type":"Answer","text":"Your daily calories depend on your age, height, weight, gender and activity level. Use the calculator to find your maintenance calories, then subtract about 400 to lose fat or add about 300 to gain muscle."}},
-{"@type":"Question","name":"How much protein do I need to build muscle?","acceptedAnswer":{"@type":"Answer","text":"Most lifters do well with 1.6 to 2.2 grams of protein per kilogram of body weight per day."}},
-{"@type":"Question","name":"Is this calculator accurate?","acceptedAnswer":{"@type":"Answer","text":"It uses the Mifflin-St Jeor equation, which is widely used. Results are estimates, so adjust based on your progress after 2 to 3 weeks."}}
-]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many calories should I eat per day?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your age, height, weight, gender and activity. Use the calculator for maintenance calories, then subtract about 400 kcal to lose fat or add about 300 kcal to gain muscle."}}, {"@type": "Question", "name": "How much protein do I need to build muscle?", "acceptedAnswer": {"@type": "Answer", "text": "Most lifters do well with 1.6 to 2.2 g of protein per kg of body weight daily."}}, {"@type": "Question", "name": "Is this calculator accurate?", "acceptedAnswer": {"@type": "Answer", "text": "It is a good starting estimate based on the Mifflin-St Jeor equation. Track your weight for 2-3 weeks and adjust by 100-200 kcal if needed."}}, {"@type": "Question", "name": "Can I hit my macros with desi food?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Daal, roti, chicken, eggs, dahi and milk can cover your protein, carbs and fats on a student budget. See the desi nutrition guide for exact numbers."}}]}
 </script>
 </head>
 <body>
 <div id="progress" aria-hidden="true"></div>
 <a class="skip" href="#main">Skip to content</a>
-<header>
+<header class="site-header">
   <div class="nav">
-    <a class="logo" href="index.html">Fit<span>Planet</span></a>
-    <nav aria-label="Main navigation">
-      <a class="active" href="index.html">Calculator</a>
+    <a class="logo" href="index.html" aria-label="FitPlanet home">Fit<span>Planet</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">&#9776;</button>
+    <nav id="menu" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
       <a href="desi-nutrition.html">Desi Nutrition</a>
       <a href="beginner-workout.html">Workout Chart</a>
+      <a class="btn btn-sm" href="index.html#calculator">Calculator</a>
     </nav>
   </div>
 </header>
 
+<main id="main">
+
 <section class="hero">
-  <h1>Free Macro &amp; Calorie Calculator for a beginner</h1>
-  <p>Find your daily calories, protein, carbs and fats in seconds, then build your plan with daal, roti, chicken and eggs.</p>
-  <p class="rotator">Track your <span id="rotator" class="rot">calories</span> the desi way</p>
+  <div class="blobs" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i></div>
+  <div class="hero-grid">
+    <div>
+      <p class="badge"><b>NEW</b> Free macro calculator</p>
+      <h1 data-hl="2">Train smart. Eat desi. Grow strong.</h1>
+      <p class="lead">FitPlanet is a free fitness guide built for Pakistani lifters. Calculate your macros, hit them with the desi food you already love, and follow a simple beginner split.</p>
+      <div class="actions">
+        <a class="btn" href="#calculator">Calculate my macros</a>
+        <a class="btn btn-ghost" href="beginner-workout.html">See the workout chart</a>
+      </div>
+    </div>
+    <div class="orb-wrap" aria-hidden="true">
+      <div class="orb"></div><div class="ring"></div>
+      <span class="sat s1">&#127947;</span><span class="sat s2">&#127835;</span><span class="sat s3">&#128170;</span>
+    </div>
+  </div>
+  <a class="cue" href="#intro" aria-label="Scroll down"><i></i></a>
 </section>
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-group"><span>🍛 Daal</span><span>🍗 Chicken</span><span>🥚 Eggs</span><span>🍚 Rice</span><span>🫓 Roti</span><span>🥛 Dahi</span><span>🍌 Banana</span><span>🥜 Peanuts</span><span>💪 Protein</span><span>🔥 Calories</span><span>🍛 Daal</span><span>🍗 Chicken</span><span>🥚 Eggs</span><span>🍚 Rice</span><span>🫓 Roti</span><span>🥛 Dahi</span><span>🍌 Banana</span><span>🥜 Peanuts</span><span>💪 Protein</span><span>🔥 Calories</span></div><div class="marquee-group"><span>🍛 Daal</span><span>🍗 Chicken</span><span>🥚 Eggs</span><span>🍚 Rice</span><span>🫓 Roti</span><span>🥛 Dahi</span><span>🍌 Banana</span><span>🥜 Peanuts</span><span>💪 Protein</span><span>🔥 Calories</span><span>🍛 Daal</span><span>🍗 Chicken</span><span>🥚 Eggs</span><span>🍚 Rice</span><span>🫓 Roti</span><span>🥛 Dahi</span><span>🍌 Banana</span><span>🥜 Peanuts</span><span>💪 Protein</span><span>🔥 Calories</span></div></div></div>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-group"><span>FitPlanet</span><span>Train smart</span><span>Eat desi</span><span>Grow strong</span><span>FitPlanet</span><span>Train smart</span><span>Eat desi</span><span>Grow strong</span><span>FitPlanet</span><span>Train smart</span><span>Eat desi</span><span>Grow strong</span></div><div class="marquee-group"><span>FitPlanet</span><span>Train smart</span><span>Eat desi</span><span>Grow strong</span><span>FitPlanet</span><span>Train smart</span><span>Eat desi</span><span>Grow strong</span><span>FitPlanet</span><span>Train smart</span><span>Eat desi</span><span>Grow strong</span></div></div></div>
 
-<main id="main">
-  <section class="stats-inner" aria-label="Site highlights">
-    <div class="sitem"><strong data-count="11">11</strong><span>Desi foods with macros</span></div>
-    <div class="sitem"><strong data-count="3">3</strong><span>Goals: lose, maintain, gain</span></div>
-    <div class="sitem"><strong data-count="7">7</strong><span>Instant results per calculation</span></div>
-    <div class="sitem"><strong data-count="3">3</strong><span>Training days per week</span></div>
-  </section>
+<div class="wrap" id="intro">
+  <div class="pills" aria-label="Quick links">
+    <a class="pill" href="#calculator">Macro Calculator</a>
+    <a class="pill" href="desi-nutrition.html">Desi Nutrition</a>
+    <a class="pill" href="beginner-workout.html">Beginner Workout</a>
+    <a class="pill" href="beginner-workout.html#rules">Progress Rules</a>
+  </div>
 
-  <section class="card" aria-labelledby="calc-title">
-    <h2 id="calc-title" style="margin-top:0">Calculate Your Daily Macros</h2>
-    <form id="calc-form">
-      <div class="row">
-        <div><label for="gender">Gender</label>
-          <select id="gender"><option value="male">Male</option><option value="female">Female</option></select></div>
-        <div><label for="age">Age (years)</label><input id="age" type="number" min="12" max="90" placeholder="e.g. 20"></div>
-        <div><label for="height">Height (cm)</label><input id="height" type="number" min="100" max="230" placeholder="e.g. 172"></div>
-        <div><label for="weight">Weight (kg)</label><input id="weight" type="number" min="30" max="250" placeholder="e.g. 70"></div>
-        <div><label for="activity">Activity level</label>
-          <select id="activity">
-            <option value="1.2">Sedentary (little exercise)</option>
-            <option value="1.375">Light (1-3 days/week)</option>
-            <option value="1.55" selected>Moderate (3-5 days/week)</option>
-            <option value="1.725">Very active (6-7 days/week)</option>
-          </select></div>
-        <div><label for="goal">Goal</label>
-          <select id="goal">
-            <option value="lose">Lose fat</option>
-            <option value="maintain" selected>Maintain weight</option>
-            <option value="gain">Gain muscle</option>
-          </select></div>
-      </div>
-      <button type="submit">Calculate</button>
-    </form>
+  <div class="stats" aria-label="Site highlights">
+    <div class="stat-i"><strong data-count="11">11</strong><span>Desi foods with macros</span></div>
+    <div class="stat-i"><strong data-count="3">3</strong><span>Workouts in the split</span></div>
+    <div class="stat-i"><strong data-count="18">18</strong><span>Exercises with sets and reps</span></div>
+    <div class="stat-i"><strong data-count="7">7</strong><span>Results per calculation</span></div>
+  </div>
+</div>
 
-    <div id="results" class="results" aria-live="polite">
-      <h2>Your Results</h2>
-      <div class="grid">
-        <div class="stat"><strong id="r-cal">0</strong><small>Daily calories (kcal)</small></div>
-        <div class="stat"><strong id="r-pro">0</strong><small>Protein (g)</small></div>
-        <div class="stat"><strong id="r-carb">0</strong><small>Carbs (g)</small></div>
-        <div class="stat"><strong id="r-fat">0</strong><small>Fats (g)</small></div>
-        <div class="stat"><strong id="r-bmr">0</strong><small>BMR (kcal)</small></div>
-        <div class="stat"><strong id="r-tdee">0</strong><small>Maintenance (kcal)</small></div>
-        <div class="stat"><strong id="r-bmi">0</strong><small>BMI</small></div>
-      </div>
-      <p class="note">Estimates only. Track your weight for 2-3 weeks and adjust calories by 100-200 if needed. See a doctor before major diet changes.</p>
-      <a class="cta" href="desi-nutrition.html">Hit these macros with desi food &rarr;</a>
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Three steps to a stronger you</h2>
     </div>
-  </section>
 
-  <h2>How This Calculator Works</h2>
-  <p>It uses the <strong>Mifflin-St Jeor equation</strong> to estimate your BMR (calories burned at rest), then multiplies by your activity level to get maintenance calories. For fat loss we subtract about 400 kcal, and for muscle gain we add about 300 kcal.</p>
-  <ul>
-    <li><strong>Protein:</strong> 1.8 g per kg (2.0 g per kg when cutting) to protect and build muscle.</li>
-    <li><strong>Fats:</strong> 25% of calories for hormones and health.</li>
-    <li><strong>Carbs:</strong> the remaining calories, which fuel your training.</li>
-  </ul>
+    <div class="row">
+      <div class="art" aria-hidden="true"><b>01</b><em>&#129518;</em></div>
+      <div>
+        <span class="eyebrow">Calculate</span>
+        <h3>Know your numbers</h3>
+        <p>Enter your age, height, weight and goal. FitPlanet estimates your daily calories, protein, carbs and fats with the Mifflin-St Jeor equation.</p>
+        <a class="go" href="#calculator">Open the calculator</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="art" aria-hidden="true"><b>02</b><em>&#127835;</em></div>
+      <div>
+        <span class="eyebrow">Eat</span>
+        <h3>Hit your macros with desi food</h3>
+        <p>Daal, roti, chicken, eggs and dahi can cover your protein, carbs and fats on a student budget. See the macros of common foods and a sample day.</p>
+        <a class="go" href="desi-nutrition.html">Read the desi nutrition guide</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="art" aria-hidden="true"><b>03</b><em>&#127947;</em></div>
+      <div>
+        <span class="eyebrow">Train</span>
+        <h3>Follow a simple 3-day split</h3>
+        <p>Back and biceps, chest and triceps, shoulders and legs. Clear sets, reps and rest for every exercise, made for beginners.</p>
+        <a class="go" href="beginner-workout.html">Open the workout chart</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <h2>Frequently Asked Questions</h2>
-  <details><summary>How many calories should I eat per day?</summary>
-    <p>It depends on your age, height, weight, gender and activity. Use the calculator for maintenance, then subtract about 400 kcal to lose fat or add about 300 kcal to gain muscle.</p></details>
-  <details><summary>How much protein do I need to build muscle?</summary>
-    <p>Most lifters do well with 1.6 to 2.2 g of protein per kg of body weight daily.</p></details>
-  <details><summary>Is this calculator accurate?</summary>
-    <p>It is a good starting estimate. Adjust after 2-3 weeks based on your real progress.</p></details>
+<section class="block" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Everything in one orbit</span>
+      <h2>Our tools</h2>
+    </div>
+    <div class="ngrid" style="margin-top:28px">
+      <a class="ncard" href="#calculator"><span class="num">01</span><h3>Macro Calculator</h3><p>Calories, protein, carbs, fats, BMR and BMI in seconds.</p><span class="go">Calculate</span></a>
+      <a class="ncard" href="desi-nutrition.html"><span class="num">02</span><h3>Desi Nutrition</h3><p>Macros of 11 common Pakistani foods plus a sample meal plan.</p><span class="go">Explore</span></a>
+      <a class="ncard" href="beginner-workout.html"><span class="num">03</span><h3>Workout Chart</h3><p>Workouts A, B and C with sets, reps and rest times.</p><span class="go">Explore</span></a>
+      <a class="ncard" href="beginner-workout.html#rules"><span class="num">04</span><h3>Progress Rules</h3><p>Overload, sleep, protein and patience: the habits that work.</p><span class="go">Read</span></a>
+    </div>
+  </div>
+</section>
 
-  <h2>Next Steps</h2>
-  <ul>
-    <li>Learn <a href="desi-nutrition.html">how to hit your macros with desi meals</a>.</li>
-    <li>Follow the <a href="beginner-workout.html">beginner workout chart</a>.</li>
-  </ul>
+<section class="block" id="calculator">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Free tool</span>
+      <h2>Calculate your daily macros</h2>
+    </div>
+    <div class="panel" style="margin-top:28px">
+      <form id="calc-form" novalidate>
+        <div class="row-f">
+          <div><label for="gender">Gender</label>
+            <select id="gender"><option value="male">Male</option><option value="female">Female</option></select></div>
+          <div><label for="age">Age (years)</label><input id="age" type="number" min="12" max="90" inputmode="numeric" placeholder="e.g. 20"></div>
+          <div><label for="height">Height (cm)</label><input id="height" type="number" min="100" max="230" inputmode="numeric" placeholder="e.g. 172"></div>
+          <div><label for="weight">Weight (kg)</label><input id="weight" type="number" min="30" max="250" inputmode="decimal" placeholder="e.g. 70"></div>
+          <div><label for="activity">Activity level</label>
+            <select id="activity">
+              <option value="1.2">Sedentary (little exercise)</option>
+              <option value="1.375">Light (1-3 days/week)</option>
+              <option value="1.55" selected>Moderate (3-5 days/week)</option>
+              <option value="1.725">Very active (6-7 days/week)</option>
+            </select></div>
+          <div><label for="goal">Goal</label>
+            <select id="goal">
+              <option value="lose">Lose fat</option>
+              <option value="maintain" selected>Maintain weight</option>
+              <option value="gain">Gain muscle</option>
+            </select></div>
+        </div>
+        <button class="btn" type="submit">Calculate</button>
+        <p id="calc-msg" role="alert"></p>
+      </form>
+
+      <div id="results" class="results" aria-live="polite">
+        <h3>Your results</h3>
+        <div class="stat-grid">
+          <div class="stat"><strong id="r-cal">0</strong><small>Daily calories (kcal)</small></div>
+          <div class="stat"><strong id="r-pro">0</strong><small>Protein (g)</small></div>
+          <div class="stat"><strong id="r-carb">0</strong><small>Carbs (g)</small></div>
+          <div class="stat"><strong id="r-fat">0</strong><small>Fats (g)</small></div>
+          <div class="stat"><strong id="r-bmr">0</strong><small>BMR (kcal)</small></div>
+          <div class="stat"><strong id="r-tdee">0</strong><small>Maintenance (kcal)</small></div>
+          <div class="stat"><strong id="r-bmi">0</strong><small>BMI</small></div>
+        </div>
+        <p class="note" style="margin-top:14px">Estimates only. Track your weight for 2-3 weeks and adjust calories by 100-200 if needed.</p>
+        <a class="btn" href="desi-nutrition.html">Hit these macros with desi food</a>
+      </div>
+    </div>
+
+    <h2>How the calculator works</h2>
+    <p class="muted">It uses the <strong>Mifflin-St Jeor equation</strong> to estimate your BMR (calories burned at rest), then multiplies by your activity level to get maintenance calories. For fat loss we subtract about 400 kcal, and for muscle gain we add about 300 kcal.</p>
+    <ul class="muted">
+      <li><strong>Protein:</strong> 1.8 g per kg (2.0 g per kg when cutting) to protect and build muscle.</li>
+      <li><strong>Fats:</strong> 25% of calories for hormones and health.</li>
+      <li><strong>Carbs:</strong> the remaining calories, which fuel your training.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="block" id="faq" style="background:var(--bg2)">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions? Answered.</h2>
+    </div>
+  <details><summary>How many calories should I eat per day?</summary><p>It depends on your age, height, weight, gender and activity. Use the calculator for maintenance calories, then subtract about 400 kcal to lose fat or add about 300 kcal to gain muscle.</p></details>
+  <details><summary>How much protein do I need to build muscle?</summary><p>Most lifters do well with 1.6 to 2.2 g of protein per kg of body weight daily.</p></details>
+  <details><summary>Is this calculator accurate?</summary><p>It is a good starting estimate based on the Mifflin-St Jeor equation. Track your weight for 2-3 weeks and adjust by 100-200 kcal if needed.</p></details>
+  <details><summary>Can I hit my macros with desi food?</summary><p>Yes. Daal, roti, chicken, eggs, dahi and milk can cover your protein, carbs and fats on a student budget. See the desi nutrition guide for exact numbers.</p></details>
+  </div>
+</section>
+
+<section class="closing">
+  <h2>Train smart. Eat desi. Grow strong.</h2>
+  <a class="btn" href="#calculator">Start with the calculator</a>
+</section>
+
 </main>
 
-<footer>
-  <p>&copy; 2026 Fitplanet. For education only, not medical advice.</p>
-  <p><a href="index.html">Calculator</a> | <a href="desi-nutrition.html">Desi Nutrition</a> | <a href="beginner-workout.html">Workout Chart</a></p>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="index.html" aria-label="FitPlanet home">Fit<span>Planet</span></a>
+        <p style="margin-top:10px">Free fitness guide for Pakistani lifters: macros, desi meals and a simple beginner split.</p>
+      </div>
+      <div><h3>Explore</h3><ul><li><a href="index.html">Home</a></li><li><a href="desi-nutrition.html">Desi Nutrition</a></li><li><a href="beginner-workout.html">Workout Chart</a></li></ul></div>
+      <div><h3>Tools</h3><ul><li><a href="index.html#calculator">Macro Calculator</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="beginner-workout.html#rules">Progress Rules</a></li></ul></div>
+      <div><h3>Note</h3><p>Educational content only, not medical advice. Check with a doctor before big diet or training changes.</p></div>
+    </div>
+    <p class="copy">&copy; 2026 FitPlanet. Train smart. Eat desi. Grow strong.</p>
+  </div>
 </footer>
+<a class="fab" href="index.html#calculator" aria-label="Open the macro calculator"><span aria-hidden="true">&#129518;</span><span>Calculate macros</span></a>
 <script src="script.js" defer></script>
 </body>
 </html>
