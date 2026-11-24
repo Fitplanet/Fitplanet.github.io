@@ -20,17 +20,19 @@
     requestAnimationFrame(step);
   }
 
-  /* ---------- Mobile menu ---------- */
-  function initMenu() {
-    var btn = $(".menu-btn"), nav = $("#menu");
-    if (!btn || !nav) return;
-    function close() { nav.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
-    btn.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    $$("a", nav).forEach(function (a) { a.addEventListener("click", close); });
-    doc.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  /* ---------- Bottom dock: highlight Calculator while it is on screen ---------- */
+  function initDock() {
+    var dock = $(".dock"), calc = $("#calculator");
+    if (!dock || !calc || !("IntersectionObserver" in window)) return;
+    var home = $('.dock a[href="index.html"]');
+    var calcLink = $('.dock a[href="index.html#calculator"]');
+    if (!home || !calcLink) return;
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        calcLink.classList.toggle("is-active", en.isIntersecting);
+        home.classList.toggle("is-active", !en.isIntersecting);
+      });
+    }, { rootMargin: "-35% 0px -35% 0px" }).observe(calc);
   }
 
   /* ---------- Scroll: progress, header, back-to-top, parallax ---------- */
@@ -232,7 +234,7 @@
   }
 
   function init() {
-    initMenu();
+    initDock();
     initScroll();
     initHero();
     initReveal();
